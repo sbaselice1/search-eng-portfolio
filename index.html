@@ -287,7 +287,7 @@ p{text-wrap:pretty;}
       </div>
 
       <div class="stats">
-        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Production systems shipped</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Production systems shipped</div></div>
         <div class="stat"><div class="stat-num">3</div><div class="stat-label">AI answer engines instrumented</div></div>
         <div class="stat"><div class="stat-num">End-to-end</div><div class="stat-label">Data → pipeline → UI → deploy</div></div>
         <div class="stat"><div class="stat-num">Available</div><div class="stat-label">Contract · fractional · in-house</div></div>
@@ -342,48 +342,36 @@ p{text-wrap:pretty;}
     <div class="wrap">
       <div class="section-head reveal">
         <span class="mono">02 — Selected work</span>
-        <h2>Five builds. Real architecture, real outcomes.</h2>
-        <p>Live products link out directly. Internal tools are shown as sanitized case studies — architecture and UI with placeholder data, company details removed — because the value is the system design, not the proprietary code.</p>
+        <h2>Six builds. Real architecture, real outcomes.</h2>
+        <p>Where I can, builds link to a live, runnable demo or product. Internal tools are shown as sanitized case studies — architecture and UI with placeholder data, company details removed — because the value is the system design, not the proprietary code.</p>
       </div>
 
-      <!-- Project 1: Shensuo -->
+      <!-- Project 1: Bing AI Content Gap Finder (LIVE DEMO) -->
       <article class="project reveal">
         <div class="project-grid">
           <div class="project-body">
-            <span class="project-tag">Live SaaS · AI Search</span>
+            <span class="project-tag">Live Demo · AI Search</span>
             <div>
-              <h3>Shensuo — AI Brand Narrative Monitoring</h3>
-              <p class="project-status">// shensuo.ai · founder &amp; builder · in production</p>
+              <h3>Bing AI Content Gap Finder</h3>
+              <p class="project-status">// runnable demo · Streamlit · try it with the bundled sample</p>
             </div>
-            <p class="project-desc">A platform that tracks how AI models describe a brand — not just whether they mention it. It fires buyer-intent prompt sets at multiple LLMs, then parses each answer for brand presence, factual accuracy, competitor mentions, citations, and sentiment, and scores the gap between mention volume and the underlying narrative.</p>
+            <p class="project-desc">Turns a flat Bing Webmaster Tools “AI Search Queries” export — the grounding queries AI assistants actually cite a site for — into intent classification, topic clusters, content gaps, and ready-to-ship on-page fixes. Upload a CSV (or run the bundled sample) and it returns the work, not just a chart. Runs fully offline; add an OpenAI or Gemini key for sharper labels.</p>
             <ul class="project-points">
-              <li>Multi-engine prompt pipeline across GPT-class, Gemini, and Perplexity</li>
-              <li>Severity scoring that flags high-mention / negative-narrative gaps</li>
-              <li>Full SaaS: auth, dashboards, alerting, Stripe billing, live deploy</li>
+              <li>Classifies every grounding query by searcher intent, then clusters topics</li>
+              <li>Flags thin or missing topics, plus optional competitor-cited gaps</li>
+              <li>Generates meta title, description, H1, and FAQ copy within real edit limits</li>
             </ul>
             <div class="project-stack">
-              <span class="chip">Flask</span><span class="chip">Supabase</span><span class="chip">LLM APIs</span><span class="chip">Stripe</span><span class="chip">GCP / Firebase</span>
+              <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">pandas</span><span class="chip">LLM APIs</span><span class="chip">Cloud Run</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://shensuo.ai" target="_blank" rel="noopener">Visit shensuo.ai
+              <a class="project-link" href="https://share.streamlit.io/deploy?repository=sbaselice1%2Fbing-ai-content-gap-finder&branch=main&mainModule=app.py" target="_blank" rel="noopener">Launch live demo
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
             </div>
+            <p class="note">No login required — tick the bundled sample and click Analyze.</p>
           </div>
           <div class="project-figure">
-            <div class="mock" aria-hidden="true">
-              <div class="mock-bar"><i></i><i></i><i></i><span>app.shensuo.ai</span></div>
-              <div class="mock-body">
-                <div class="mock-kpi">
-                  <div class="kpi"><b>82%</b><small>MENTION RATE</small></div>
-                  <div class="kpi"><b>−0.4</b><small>SENTIMENT</small></div>
-                  <div class="kpi"><b>S3</b><small>GAP SEVERITY</small></div>
-                </div>
-                <div class="mock-row"><span style="width:64px">GPT</span><span class="bar a"></span></div>
-                <div class="mock-row"><span style="width:64px">Gemini</span><span class="bar c"></span></div>
-                <div class="mock-row"><span style="width:64px">Pplx</span><span class="bar b"></span></div>
-                <div class="mock-row"><span style="width:64px">Comp.</span><span class="bar d"></span></div>
-              </div>
-            </div>
+            <img src="assets/bing-gap-finder-demo.png" alt="Bing AI Content Gap Finder analyzing a sample export: 289 grounding queries, 39,207 AI citations, 13 topics, and an intent breakdown table" loading="lazy" style="width:100%;max-width:460px;border:1px solid var(--color-border-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-md);" />
           </div>
         </div>
       </article>
@@ -397,29 +385,31 @@ p{text-wrap:pretty;}
               <h3>Search Console Data Manager</h3>
               <p class="project-status">// sanitized case study · end-to-end data app</p>
             </div>
-            <p class="project-desc">An end-to-end application that pulls Google Search Console data through the API, cleans and joins it, and turns months of query-and-page exports into an analysis layer a team can actually act on. Built to replace the spreadsheet-export grind with a repeatable pipeline.</p>
+            <p class="project-desc">An end-to-end app that pulls Google Search Console data through the API into BigQuery, cleans and joins it, and surfaces it through an interactive analysis layer — turning months of query-and-page exports into something a team can act on. Built to replace the spreadsheet-export grind with a repeatable, queryable pipeline.</p>
             <ul class="project-points">
               <li>Automated GSC API extraction past the UI's row and date limits</li>
-              <li>Query classification, page joins, and trend deltas over time</li>
-              <li>Output ready for reporting — designed to be sold as a product</li>
+              <li>BigQuery as the warehouse; query classification, page joins, trend deltas</li>
+              <li>Interactive Streamlit front end — filter, drill in, export reporting</li>
             </ul>
             <div class="project-stack">
-              <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">GSC API</span><span class="chip">Flask</span>
+              <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">GSC API</span><span class="chip">BigQuery</span><span class="chip">pandas</span>
             </div>
             <p class="note">Architecture &amp; UI shown with placeholder data. Live walkthrough available on request.</p>
           </div>
           <div class="project-figure">
             <div class="mock" aria-hidden="true">
-              <div class="mock-bar"><i></i><i></i><i></i><span>gsc-data-manager</span></div>
+              <div class="mock-bar"><i></i><i></i><i></i><span>gsc-data-manager · streamlit</span></div>
               <div class="mock-body">
                 <div class="mock-kpi">
-                  <div class="kpi"><b>1.2M</b><small>ROWS PULLED</small></div>
+                  <div class="kpi"><b>1.2M</b><small>ROWS → BQ</small></div>
                   <div class="kpi"><b>+18%</b><small>CLICKS Δ</small></div>
                   <div class="kpi"><b>240</b><small>PAGES</small></div>
                 </div>
                 <div class="spark"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:85%"></i><i style="height:78%"></i><i style="height:95%"></i></div>
-                <div class="mock-row"><span>branded</span><span class="bar c"></span></div>
-                <div class="mock-row"><span>non-brand</span><span class="bar b"></span></div>
+                <div class="mock-row"><span style="width:72px">branded</span><span class="bar c"></span></div>
+                <div class="mock-row"><span style="width:72px">non-brand</span><span class="bar b"></span></div>
+                <div class="mock-row"><span style="width:72px">rising</span><span class="bar a"></span></div>
+                <div class="mock-row"><span style="width:72px">decaying</span><span class="bar d"></span></div>
               </div>
             </div>
           </div>
@@ -500,7 +490,49 @@ p{text-wrap:pretty;}
         </div>
       </article>
 
-      <!-- Project 5: TaipTrade -->
+      <!-- Project 5: Shensuo -->
+      <article class="project reveal">
+        <div class="project-grid">
+          <div class="project-body">
+            <span class="project-tag">Live SaaS · AI Search</span>
+            <div>
+              <h3>Shensuo — AI Brand Narrative Monitoring</h3>
+              <p class="project-status">// shensuo.ai · founder &amp; builder · in production</p>
+            </div>
+            <p class="project-desc">A full SaaS platform that tracks how AI models describe a brand — not just whether they mention it. It fires buyer-intent prompt sets at multiple LLMs, then parses each answer for brand presence, factual accuracy, competitor mentions, citations, and sentiment, and scores the gap between mention volume and the underlying narrative.</p>
+            <ul class="project-points">
+              <li>Multi-engine prompt pipeline across GPT-class, Gemini, and Perplexity</li>
+              <li>Severity scoring that flags high-mention / negative-narrative gaps</li>
+              <li>Full SaaS: auth, dashboards, alerting, Stripe billing, live deploy</li>
+            </ul>
+            <div class="project-stack">
+              <span class="chip">Flask</span><span class="chip">Supabase</span><span class="chip">LLM APIs</span><span class="chip">Stripe</span><span class="chip">GCP / Firebase</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://shensuo.ai" target="_blank" rel="noopener">Visit shensuo.ai
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+          <div class="project-figure">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>app.shensuo.ai</span></div>
+              <div class="mock-body">
+                <div class="mock-kpi">
+                  <div class="kpi"><b>82%</b><small>MENTION RATE</small></div>
+                  <div class="kpi"><b>−0.4</b><small>SENTIMENT</small></div>
+                  <div class="kpi"><b>S3</b><small>GAP SEVERITY</small></div>
+                </div>
+                <div class="mock-row"><span style="width:64px">GPT</span><span class="bar a"></span></div>
+                <div class="mock-row"><span style="width:64px">Gemini</span><span class="bar c"></span></div>
+                <div class="mock-row"><span style="width:64px">Pplx</span><span class="bar b"></span></div>
+                <div class="mock-row"><span style="width:64px">Comp.</span><span class="bar d"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6: TaipTrade -->
       <article class="project reveal">
         <div class="project-grid">
           <div class="project-body">
@@ -578,7 +610,7 @@ p{text-wrap:pretty;}
           <a class="btn btn-primary" data-mail="sbaselice" data-dom="gmail.com" href="#" rel="nofollow">Email me
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="https://shensuo.ai" target="_blank" rel="noopener">See Shensuo live</a>
+          <a class="btn btn-ghost" href="#work">See the builds</a>
         </div>
       </div>
     </div>
