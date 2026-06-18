@@ -244,7 +244,7 @@ p{text-wrap:pretty;}
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <span class="eyebrow mono"><span class="dot"></span>In-house · Technical SEO · AI Search</span>
+      <span class="eyebrow mono"><span class="dot"></span>Available · Contract / Fractional / In-house</span>
       <h1>I build the tooling that makes brands <em>visible</em> in search and AI answers.</h1>
       <p class="hero-sub">Technical SEO and GEO/AEO engineer who ships production software — data pipelines, automation, and an AI brand-narrative monitoring platform. This isn't a list of audits. It's working systems with architecture and outcomes you can inspect.</p>
       <div class="hero-actions">
@@ -258,7 +258,7 @@ p{text-wrap:pretty;}
         <div class="stat"><div class="stat-num">5</div><div class="stat-label">Production systems shipped</div></div>
         <div class="stat"><div class="stat-num">3</div><div class="stat-label">AI answer engines instrumented</div></div>
         <div class="stat"><div class="stat-num">End-to-end</div><div class="stat-label">Data → pipeline → UI → deploy</div></div>
-        <div class="stat"><div class="stat-num">In-house</div><div class="stat-label">Embedded, not agency overhead</div></div>
+        <div class="stat"><div class="stat-num">Available</div><div class="stat-label">Contract · fractional · in-house</div></div>
       </div>
     </div>
   </section>
@@ -520,13 +520,13 @@ p{text-wrap:pretty;}
       <div class="about reveal">
         <div>
           <p>I'm a technical SEO and AI-search practitioner who got tired of the gap between recommending things and building them. So I build them. Over the last few years I've shipped a live AI brand-monitoring SaaS, internal data tooling for Search Console pipelines and internal-link architecture, an automated on-page audit engine, and a market-signal product — backend, data layer, and deploy included.</p>
-          <p>My background is hands-on technical SEO inside a focused, high-stakes vertical, where the work has to be precise and defensible. What I'm looking for now is an <strong>in-house role with real ownership</strong> — a team where I can connect search, AI visibility, content, and engineering, and where good work is judged on outcomes, not narrative.</p>
+          <p>My background is hands-on technical SEO inside a focused, high-stakes vertical, where the work has to be precise and defensible. What I'm looking for now is <strong>real ownership</strong> — contract, fractional, or in-house — connecting search, AI visibility, content, and engineering, where good work is judged on outcomes, not narrative.</p>
           <p>The market is moving exactly this direction: roughly four in five search roles now ask for AI-search and visibility skills, and in-house teams are standing up GEO programs for the first time. That's the seat I want — and the work below is the proof I can fill it from day one.</p>
         </div>
         <aside class="about-card">
           <h4>What I'm looking for</h4>
           <ul class="about-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--color-text)">In-house</strong>, embedded on the team — not agency throughput</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--color-text)">Contract, fractional, or in-house</strong> — embedded, not agency throughput</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Ownership of search + AI visibility, room to build tooling</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Project-based or ongoing — flexible on engagement type</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>A team that knows what good looks like</span></li>
@@ -540,10 +540,10 @@ p{text-wrap:pretty;}
   <section class="section" id="contact">
     <div class="wrap narrow">
       <div class="contact reveal">
-        <h2>Let's talk about an in-house role</h2>
-        <p>If you're building a search or AI-visibility function and want someone who ships, get in touch. Happy to walk through any build live.</p>
+        <h2>Let's talk — contract, fractional, or in-house</h2>
+        <p>If you're building a search or AI-visibility function and want someone who ships, get in touch. Happy to scope a project or walk through any build live.</p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:hello@example.com?subject=In-house%20SEO%20%2F%20AI%20Search%20role">Email me
+          <a class="btn btn-primary" data-mail="sbaselice" data-dom="gmail.com" href="#" rel="nofollow">Email me
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
           </a>
           <a class="btn btn-ghost" href="https://shensuo.ai" target="_blank" rel="noopener">See Shensuo live</a>
@@ -579,6 +579,15 @@ p{text-wrap:pretty;}
   if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('in'));return;}
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   els.forEach(e=>io.observe(e));
+})();
+</script>
+<script>
+(function(){
+  var subj=encodeURIComponent("Contract / role inquiry — SEO & AI Search");
+  document.querySelectorAll('[data-mail]').forEach(function(a){
+    var addr=a.getAttribute('data-mail')+'@'+a.getAttribute('data-dom');
+    a.setAttribute('href','mailto:'+addr+'?subject='+subj);
+  });
 })();
 </script>
 </body>
